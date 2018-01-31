@@ -1,0 +1,3 @@
+$page.setTitle("Welcome, $name")
+<p>Welcome, $name!</p>
+<p>your age, $age!</p>
