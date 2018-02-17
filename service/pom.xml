@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>live.wallet</groupId>
@@ -11,6 +10,7 @@
 	<packaging>jar</packaging>
 	<name>wallet service</name>
 	<description>Personal accounting system </description>
+
 	<developers>
 		<developer>
 			<id>1</id>
@@ -22,51 +22,25 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<spring.version>4.3.9.RELEASE</spring.version>
-		<webx-version>3.2.4</webx-version>
+		<version.dubbo>2.8.4</version.dubbo>
+		<version.zookeeper>3.4.9</version.zookeeper>
+		<version.zkclient>0.1</version.zkclient>
+		<version.druid>1.1.6</version.druid>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>live.wallet</groupId>
 			<artifactId>wallet-api</artifactId>
-			<version>1.0</version>
+			<version>${project.version}</version>
 		</dependency>
+
+		<!-- database -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>${spring.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-beans</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-core</artifactId>
-				</exclusion>
-			</exclusions>
+			<version>${version.spring}</version>
 		</dependency>
-		<!-- dubbo -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>dubbo</artifactId>
-			<!-- <exclusions> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-context</artifactId> </exclusion> <exclusion> 
-				<groupId>org.springframework</groupId> <artifactId>spring-core</artifactId> </exclusion> <exclusion> <groupId>org.springframework</groupId> 
-				<artifactId>spring-beans</artifactId> </exclusion> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-aop</artifactId> 
-				</exclusion> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-expression</artifactId> </exclusion> <exclusion> 
-				<groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> </exclusion> </exclusions> -->
-		</dependency>
-		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.sgroschupf</groupId>
-			<artifactId>zkclient</artifactId>
-		</dependency>
-		<!-- /dubbo -->
-		<!-- database -->
 		<!-- <dependency> <groupId>postgresql</groupId> <artifactId>postgresql</artifactId> <version>9.1-901-1.jdbc4</version> </dependency> -->
 		<!-- <dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> <version>11.2.0.2.0</version> </dependency> -->
 		<dependency>
@@ -77,19 +51,55 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
-			<version>1.0.6</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>3.4.5</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
-			<version>1.3.1</version>
+			<version>${version.druid}</version>
 		</dependency>
 		<!--/ database -->
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>${version.zookeeper}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>${version.zkclient}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>${version.dubbo}</version>
+			<!-- <exclusions> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-context</artifactId> </exclusion> <exclusion> <groupId>org.springframework</groupId> 
+				<artifactId>spring-core</artifactId> </exclusion> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-beans</artifactId> </exclusion> 
+				<exclusion> <groupId>org.springframework</groupId> <artifactId>spring-aop</artifactId> </exclusion> <exclusion> <groupId>org.springframework</groupId> 
+				<artifactId>spring-expression</artifactId> </exclusion> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> </exclusion> 
+				</exclusions> -->
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>javax.mail-api</artifactId>
@@ -100,17 +110,24 @@
 			<artifactId>javax.mail</artifactId>
 			<version>1.5.6</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.googlecode.javaewah</groupId>
 			<artifactId>JavaEWAH</artifactId>
 			<version>1.1.0</version>
 		</dependency>
 
-
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
 	</dependencies>
+
 	<build>
-		<finalName>wallet-service</finalName>
+		<finalName>${project.artifactId}-${$project.version}</finalName>
 		<filters>
 			<filter>src/main/filters/filter-${env}.properties</filter>
 		</filters>
@@ -122,31 +139,5 @@
 		</resources>
 	</build>
 
-	<!-- 不同的打包环境 -->
-	<profiles>
-		<!-- 开发环境，默认激活 -->
-		<profile>
-			<id>dev</id>
-			<properties>
-				<env>dev</env>
-			</properties>
-			<activation>
-				<activeByDefault>true</activeByDefault><!--默认启用的是dev环境配置 -->
-			</activation>
-		</profile>
-		<!-- 生产环境 -->
-		<profile>
-			<id>production</id>
-			<properties>
-				<env>production</env>
-			</properties>
-		</profile>
-		<!-- 测试环境 -->
-		<profile>
-			<id>test</id>
-			<properties>
-				<env>test</env>
-			</properties>
-		</profile>
-	</profiles>
+
 </project>
