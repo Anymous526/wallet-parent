@@ -7,8 +7,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>live.wallet</groupId>
 	<artifactId>wallet-parent</artifactId>
-	<packaging>pom</packaging>
 	<version>1.0</version>
+	<packaging>pom</packaging>
 	<name>wallet-parent</name>
 	<description>Online wallet </description>
 	<developers>

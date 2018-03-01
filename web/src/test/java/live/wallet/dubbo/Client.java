@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import live.wallet.service.UserManager;
 
 public class Client {
-	private  static ApplicationContext context;
+	private static ApplicationContext context;
 
 	@BeforeClass
 	public static void init() {
@@ -18,7 +18,7 @@ public class Client {
 	@Test
 	public void testA() {
 		UserManager u = (UserManager) context.getBean("userManager");
-		System.out.println(u.sayHello("hhe"));
+
 	}
 
 }
