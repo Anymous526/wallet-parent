@@ -6,9 +6,9 @@
 		<version>1.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<artifactId>wallet-api</artifactId>
+	<artifactId>wallet-bean</artifactId>
 	<packaging>jar</packaging>
-	<name>wallet api</name>
+	<name>wallet bean</name>
 	<description>Personal accounting system </description>
 	<developers>
 		<developer>
@@ -17,14 +17,7 @@
 			<email>kevin.sun526@qq.com</email>
 		</developer>
 	</developers>
-	<dependencies>
-		<dependency>
-			<groupId>live.wallet</groupId>
-			<artifactId>wallet-bean</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
 	<build>
-		<finalName>wallet-api</finalName>
+		<finalName>wallet-bean</finalName>
 	</build>
 </project>

@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
@@ -23,7 +22,7 @@
 		<module>api</module>
 		<module>bean</module>
 		<module>web</module>
-
+		<module>bean</module>
 		<module>service</module>
 	</modules>
 
@@ -39,6 +38,10 @@
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
 				<version>1.2.14</version>
+			</dependency>
+			<dependency>
+				<groupId>live.wallet</groupId>
+				<artifactId>bean</artifactId>
 			</dependency>
 			<!-- 将现有的jakarta commons logging的调用转换成lsf4j的调用。 -->
 			<dependency>
@@ -151,12 +154,12 @@
 	<!-- 远程发布 -->
 	<distributionManagement>
 		<repository>
-			<id>gyzb</id>
-			<url>http://192.168.1.15:8081/nexus/content/repositories/releases</url>
+			<id>mc</id>
+			<url>http://nexus.mcyou.net/nexus/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
-			<id>gyzb</id>
-			<url>http://192.168.1.15:8081/nexus/content/repositories/snapshots</url>
+			<id>mc</id>
+			<url>http://nexus.mcyou.net/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
