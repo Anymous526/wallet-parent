@@ -15,4 +15,6 @@ public interface UserManager {
 
 	void update(User user);
 
+	User getUser(String string);
+
 }

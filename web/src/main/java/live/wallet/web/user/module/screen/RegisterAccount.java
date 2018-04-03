@@ -15,20 +15,21 @@
  * limitations under the License.
  */
 
-package com.alibaba.sample.petstore.web.user.module.screen;
+package live.wallet.web.user.module.screen;
 
 import com.alibaba.citrus.turbine.Context;
-import com.alibaba.sample.petstore.biz.UserManager;
-import com.alibaba.sample.petstore.dal.dataobject.User;
-import com.alibaba.sample.petstore.web.common.PetstoreUser;
+
+import live.wallet.model.User;
+import live.wallet.service.UserManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class RegisterAccount {
-    @Autowired
-    private UserManager userManager;
+	@Autowired
+	private UserManager userManager;
 
-    public void execute(Context context) throws Exception {
-        User user = userManager.getUser(PetstoreUser.getCurrentUser().getId());
-        context.put("user", user);
-    }
+	public void execute(Context context) throws Exception {
+		User user = userManager.getUser("A");
+		context.put("user", user);
+	}
 }
