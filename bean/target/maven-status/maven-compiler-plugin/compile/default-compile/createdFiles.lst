@@ -1,0 +1,3 @@
+live\wallet\model\Profile.class
+live\wallet\model\User.class
+live\wallet\service\UserManager.class
