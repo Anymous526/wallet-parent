@@ -25,11 +25,10 @@ import live.wallet.service.UserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class RegisterAccount {
-	@Autowired
-	private UserManager userManager;
+    private UserManager userManager;
 
-	public void execute(Context context) throws Exception {
-		User user = userManager.getUser("A");
-		context.put("user", user);
-	}
+    public void execute(Context context) throws Exception {
+	User user = userManager.getUser("A");
+	context.put("user", user);
+    }
 }

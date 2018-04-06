@@ -19,17 +19,16 @@ package live.wallet.web.user.module.screen;
 
 import com.alibaba.citrus.turbine.Context;
 
+import live.wallet.dubbo.DubboUtils;
 import live.wallet.model.User;
 import live.wallet.service.UserManager;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 public class Account {
-	@Autowired
-	private UserManager userManager;
 
-	public void execute(Context context) throws Exception {
-		User user = userManager.getUser("A");
-		context.put("user", user);
-	}
+    private UserManager userManager = (UserManager) DubboUtils.getInstance().getRemoteBean("userManager");
+
+    public void execute(Context context) throws Exception {
+	User user = userManager.getUser("A");
+	context.put("user", user);
+    }
 }

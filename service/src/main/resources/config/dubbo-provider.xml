@@ -10,8 +10,8 @@
 	<!-- threadpool 线程池类型。threads 线程池大小 ，iothreads IO线程池大小，CPU核心数+1 -->
 	<dubbo:protocol name="dubbo" port="20880" />
 
-	<dubbo:service interface="live.wallet.service.UserManager" ref="helloService" />
-	<bean id="helloService" class="live.wallet.service.UserManagerImpl" />
+	<!-- <dubbo:service interface="live.wallet.service.UserManager" ref="helloService" /> <bean id="helloService" class="live.wallet.service.UserManagerImpl" 
+		/> -->
 	
 	<!-- 注解的方式暴露服务 -->
 	<dubbo:annotation package="live.wallet" />
