@@ -3,6 +3,7 @@ package live.wallet.web.user.module.action;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import com.alibaba.citrus.service.form.CustomErrors;
@@ -15,10 +16,8 @@ import live.wallet.exception.DuplicatedUserException;
 import live.wallet.model.User;
 import live.wallet.service.UserManager;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 public class RegisterAction {
-	@Autowired
+
 	private UserManager userManager;
 
 	public void doRegister(@FormGroup("register") User user,

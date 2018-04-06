@@ -50,7 +50,7 @@
 		/> </bean> -->
 	<!-- 扫描mapper.java -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.wallet.accounting.dao" />
+		<property name="basePackage" value="com.wallet.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

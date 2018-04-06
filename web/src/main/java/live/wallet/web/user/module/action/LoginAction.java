@@ -13,11 +13,7 @@ import com.alibaba.citrus.util.StringUtil;
 import live.wallet.model.User;
 import live.wallet.service.UserManager;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 public class LoginAction {
-
-	@Autowired
 	private UserManager userManager;
 
 	public void doLogin(@FormGroup("login") User user,
