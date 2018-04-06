@@ -13,6 +13,6 @@
 		/> <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" 
 		/> </context:component-scan> -->
 
-	<import resource="classpath:config/spring-mybatis.xml" />
+	
 
 </beans>

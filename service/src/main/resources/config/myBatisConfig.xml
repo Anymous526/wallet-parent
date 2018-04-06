@@ -5,6 +5,6 @@
 		<setting name="logPrefix" value="mybatis_" />
 	</settings>
 	<typeAliases>
-		<package name="com.wallet.accounting.entity" />
+		<package name="com.wallet.model" />
 	</typeAliases>
 </configuration>

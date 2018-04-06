@@ -31,9 +31,9 @@
 		<property name="filters" value="stat.log4j" />
 		<property name="connectionProperties" value="druid.stat.mergeSql=true" />
 	</bean>
-	<bean id="dynamicDataSource" class="com.wallet.core.DynamicDataSource">
+	<bean id="dynamicDataSource" class="live.wallet.core.DynamicDataSource">
 		<property name="targetDataSources">
-			<map key-type="com.wallet.core.DataSourceType">
+			<map key-type="live.wallet.core.DataSourceType">
 				<entry value-ref="dataSource1" key="dataSource1"></entry>
 				<entry value-ref="dataSource2" key="dataSource2"></entry>
 			</map>
@@ -44,13 +44,13 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:config/myBatisConfig.xml" />
 		<property name="dataSource" ref="dataSource1" />
-		<property name="mapperLocations" value="classpath:com/wallet/mapping/*.xml" />
+		<property name="mapperLocations" value="classpath:live/wallet/dao/*.xml" />
 	</bean>
 	<!-- <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate"> <constructor-arg index="0" ref="sqlSessionFactory" 
 		/> </bean> -->
 	<!-- 扫描mapper.java -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.wallet.dao" />
+		<property name="basePackage" value="live.wallet.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

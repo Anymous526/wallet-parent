@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>live.wallet</groupId>
 		<artifactId>wallet-parent</artifactId>
-		<version>1.0</version>
+		<version>1.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>wallet-bean</artifactId>
