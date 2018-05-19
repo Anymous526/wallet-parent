@@ -46,6 +46,6 @@ Temporary Items
 .project
 .classpath
 .settings
-/build/
-/target/
+target
+build
 /.apt_generated/
