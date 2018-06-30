@@ -1,23 +1,31 @@
 package live.wallet.dubbo;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.alibaba.dubbo.config.annotation.Reference;
 
 import live.wallet.service.UserManager;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "classpath:/config/dubbo-consumer.xml")
 public class Client {
-	private static ApplicationContext context;
+	//private static ApplicationContext context;
 
-	@BeforeClass
+	@Reference
+	private UserManager userManager;
+
+	// @BeforeClass
 	public static void init() {
-		context = new ClassPathXmlApplicationContext("classpath:META-INF/spring/dubbo-consumer.xml");
+		//context = new ClassPathXmlApplicationContext("classpath:/config/dubbo-consumer.xml");
 	}
 
 	@Test
 	public void testA() {
-		UserManager u = (UserManager) context.getBean("userManager");
+		/* UserManager u = context.getBean("userManager", UserManager.class); */
+		userManager.getUser("1");
 
 	}
 

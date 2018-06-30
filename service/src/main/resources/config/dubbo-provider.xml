@@ -8,7 +8,7 @@
 	<dubbo:registry address="zookeeper://${zookeeper.server}" timeout="5000" id="zk" />
 	<!-- 序列化方式 -->
 	<!-- threadpool 线程池类型。threads 线程池大小 ，iothreads IO线程池大小，CPU核心数+1 -->
-	<dubbo:protocol name="dubbo" port="20880" />
+	<dubbo:protocol name="dubbo" port="20880"  host="192.168.1.33"/>
 
 	<!-- <dubbo:service interface="live.wallet.service.UserManager" ref="helloService" /> <bean id="helloService" class="live.wallet.service.UserManagerImpl" 
 		/> -->

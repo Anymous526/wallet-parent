@@ -9,7 +9,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="REFRESH" CONTENT="5; URL=/manager/index.htm"/>
+    <meta http-equiv="REFRESH" CONTENT="5"; URL=/manager/index.htm"/>
     <title>
       您访问的页面暂时无法显示
     </title>

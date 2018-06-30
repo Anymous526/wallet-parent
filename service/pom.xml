@@ -23,7 +23,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<version.dubbo>2.8.4</version.dubbo>
+		<version.dubbo>2.5.9</version.dubbo>
 		<version.zookeeper>3.4.9</version.zookeeper>
 		<version.zkclient>0.1</version.zkclient>
 		<version.druid>1.1.6</version.druid>
@@ -41,6 +41,12 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${version.spring}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -88,10 +94,10 @@
 					<groupId>org.slf4j</groupId>
 					<artifactId>slf4j-log4j12</artifactId>
 				</exclusion>
-				<exclusion>
+				<!-- <exclusion>
 					<groupId>log4j</groupId>
 					<artifactId>log4j</artifactId>
-				</exclusion>
+				</exclusion> -->
 			</exclusions>
 		</dependency>
 		<dependency>
@@ -109,11 +115,6 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
 			<version>${version.dubbo}</version>
-			<!-- <exclusions> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-context</artifactId> </exclusion> <exclusion> 
-				<groupId>org.springframework</groupId> <artifactId>spring-core</artifactId> </exclusion> <exclusion> <groupId>org.springframework</groupId> 
-				<artifactId>spring-beans</artifactId> </exclusion> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-aop</artifactId> 
-				</exclusion> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-expression</artifactId> </exclusion> <exclusion> 
-				<groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> </exclusion> </exclusions> -->
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework</groupId>
@@ -141,10 +142,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-		</dependency>
+		<!-- <dependency> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> </dependency> -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>javax.mail-api</artifactId>
@@ -161,6 +159,10 @@
 			<version>1.1.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>

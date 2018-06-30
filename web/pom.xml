@@ -23,7 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<version.webx>3.2.4</version.webx>
-		<version.dubbo>2.8.4</version.dubbo>
+		<version.dubbo>2.5.9</version.dubbo>
 		<version.zookeeper>3.4.9</version.zookeeper>
 		<version.zkclient>0.1</version.zkclient>
 	</properties>
@@ -38,11 +38,6 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
 			<version>${version.dubbo}</version>
-			<!-- <exclusions> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-context</artifactId> </exclusion> <exclusion> 
-				<groupId>org.springframework</groupId> <artifactId>spring-core</artifactId> </exclusion> <exclusion> <groupId>org.springframework</groupId> 
-				<artifactId>spring-beans</artifactId> </exclusion> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-aop</artifactId> 
-				</exclusion> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-expression</artifactId> </exclusion> <exclusion> 
-				<groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> </exclusion> </exclusions> -->
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework</groupId>
@@ -132,7 +127,10 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
 		</dependency>
 		<!-- /test -->
 		<!-- servlet -->

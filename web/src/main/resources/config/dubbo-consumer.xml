@@ -7,5 +7,6 @@
 	<dubbo:application name="wallet-consumer" />
 	<dubbo:registry address="zookeeper://${zookeeper.server}" timeout="5000" id="zk" />
 	<dubbo:reference id="userManager " interface="live.wallet.service.UserManager" />
+	<dubbo:ann
 
 </beans>
