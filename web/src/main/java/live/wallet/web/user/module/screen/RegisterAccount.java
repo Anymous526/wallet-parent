@@ -22,8 +22,6 @@ import com.alibaba.citrus.turbine.Context;
 import live.wallet.model.User;
 import live.wallet.service.UserManager;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 public class RegisterAccount {
     private UserManager userManager;
 

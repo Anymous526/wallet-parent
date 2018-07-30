@@ -33,7 +33,7 @@ public class RegisterAction {
 			// 跳转到registerAccount页面
 			// nav.redirectTo(PETSTORE_REGISTER_ACCOUNT_LINK);
 		} catch (DuplicatedUserException e) {
-			Map<String, Object> params = new HashMap(); // createHashMap();
+			Map<String, Object> params = new HashMap<String,Object>(); // createHashMap();
 			params.put("userId", user.getUserId());
 
 			err.setMessage("duplicatedUserId", params);

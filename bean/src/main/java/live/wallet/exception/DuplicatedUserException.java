@@ -1,6 +1,11 @@
 package live.wallet.exception;
 
 public class DuplicatedUserException extends UserManagerException {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2596115470166248823L;
+
 	public DuplicatedUserException() {
 		super();
 	}
