@@ -33,20 +33,22 @@ public class UserManagerImpl implements UserManager {
 
 	@Override
 	public User login(int userId, String passwd) {
-		// TODO Auto-generated method stub
-		return null;
+		User user = new User();
+		user.setUserId(userId);
+		user.setPasswd(passwd);
+		return user;
 	}
 
 	@Override
 	public void register(User user) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void update(User user) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

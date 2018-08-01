@@ -1,6 +1,9 @@
 package live.wallet.model;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+	private static final long serialVersionUID = -7713330163761509606L;
 	private int userId;
 	private String userName;
 	private String passwd;

@@ -1,6 +1,9 @@
 package live.wallet.exception;
 
 public class UserManagerException extends RuntimeException {
+
+	private static final long serialVersionUID = 5452791509846613181L;
+
 	public UserManagerException() {
 		super();
 	}
