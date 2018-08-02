@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
@@ -54,7 +55,7 @@
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>jcl-over-slf4j</artifactId>
-				<version>1.7.5</version>
+				<version>1.7.25</version>
 			</dependency>
 			<!-- Hack：确保commons-logging的jar包不被引入，否则将和jcl-over-slf4j冲突 -->
 			<dependency>
@@ -90,7 +91,8 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<!-- This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
+				<!-- This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -167,12 +169,12 @@
 	<!-- 远程发布 -->
 	<distributionManagement>
 		<repository>
-			<id>mc</id>
-			<url>http://nexus.mcyou.net/nexus/content/repositories/releases</url>
+			<id>gyzb</id>
+			<url>http://192.168.1.15:8081/nexus/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
-			<id>mc</id>
-			<url>http://nexus.mcyou.net/nexus/content/repositories/snapshots</url>
+			<id>gyzb</id>
+			<url>http://192.168.1.15:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
