@@ -175,12 +175,12 @@
 	<!-- 远程发布 -->
 	<distributionManagement>
 		<repository>
-			<id>mc</id>
-			<url>http://nexus.mcyou.net/nexus/content/repositories/releases</url>
+			<id>gyzb</id>
+			<url>http://192.168.1.15:8081/nexus/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
-			<id>mc</id>
-			<url>http://nexus.mcyou.net/nexus/content/repositories/snapshots</url>
+			<id>gyzb</id>
+			<url>http://192.168.1.15:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
