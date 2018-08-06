@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/tx/spring-aop-3.2.xsd">
+	<description>spring mybatis configuration</description>
+	<!-- data source -->
+	<bean id="dataSource1" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="initialSize" value="${jdbc.initialSize}" />
+		<property name="maxActive" value="${jdbc.maxActive}" />
+		<!-- <property name="maxIdle" value="${jdbc.maxIdle}" /> -->
+		<property name="minIdle" value="${jdbc.minIdle}" />
+		<property name="filters" value="stat.log4j" />
+		<property name="connectionProperties" value="druid.stat.mergeSql=true" />
+	</bean>
+	<bean id="dataSource2" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="initialSize" value="${jdbc.initialSize}" />
+		<property name="maxActive" value="${jdbc.maxActive}" />
+		<property name="maxIdle" value="${jdbc.maxIdle}" />
+		<property name="minIdle" value="${jdbc.minIdle}" />
+		<property name="filters" value="stat.log4j" />
+		<property name="connectionProperties" value="druid.stat.mergeSql=true" />
+	</bean>
+	<bean id="dynamicDataSource" class="live.wallet.core.DynamicDataSource">
+		<property name="targetDataSources">
+			<map key-type="live.wallet.core.DataSourceType">
+				<entry value-ref="dataSource1" key="dataSource1"></entry>
+				<entry value-ref="dataSource2" key="dataSource2"></entry>
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="dataSource1">
+		</property>
+	</bean>
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:config/myBatisConfig.xml" />
+		<property name="dataSource" ref="dataSource1" />
+		<property name="mapperLocations" value="classpath:live/wallet/dao/*.xml" />
+	</bean>
+	<!-- <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate"> <constructor-arg index="0" ref="sqlSessionFactory" 
+		/> </bean> -->
+	<!-- 扫描mapper.java -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="live.wallet.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource1" />
+	</bean>
+	<!-- enable transaction decarcation with annotations -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<!-- 配置druid监控spring jdbc <bean id="druid-stat-interceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor"> </bean> 
+		<bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype"> <property name="patterns"> 
+		<list> <value>com.wallet.service.*</value> </list> </property> </bean> -->
+	<!-- <aop:config> <aop:advisor advice-ref="druid-stat-interceptor" pointcut-ref="druid-stat-pointcut" /> </aop:config> -->
+</beans>

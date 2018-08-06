@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:application name="wallet-provider" />
+	<dubbo:registry address="zookeeper://${zookeeper.server}" timeout="5000" id="zk" />
+	<!-- 序列化方式 -->
+	<!-- threadpool 线程池类型。threads 线程池大小 ，iothreads IO线程池大小，CPU核心数+1 -->
+	<dubbo:protocol name="dubbo" port="20880"  host="192.168.27.1"/>
+
+	<!-- <dubbo:service interface="live.wallet.service.UserManager" ref="helloService" /> <bean id="helloService" class="live.wallet.service.UserManagerImpl" 
+		/> -->
+	
+	<!-- 注解的方式暴露服务 -->
+	<dubbo:annotation package="live.wallet" />
+
+	<!-- 服务提供者缺省配置 dubbo:protocol 和dubbo:service的缺省项配置 -->
+	<dubbo:provider timeout="10000" />
+
+</beans>
