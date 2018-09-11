@@ -30,7 +30,7 @@
 	<properties>
 		<version.junit>4.12</version.junit>
 		<version.logback>1.2.3</version.logback>
-		<version.spring>4.3.10.RELEASE</version.spring>
+		<version.spring>4.3.18.RELEASE</version.spring>
 	</properties>
 	<repositories>
 		<repository>
