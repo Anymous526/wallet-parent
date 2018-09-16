@@ -32,6 +32,15 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>live.wallet</groupId>
 			<artifactId>wallet-api</artifactId>
 			<version>${project.version}</version>
@@ -41,7 +50,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>${version.spring}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>commons-logging</groupId>
@@ -52,12 +60,10 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${version.spring}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -71,7 +77,6 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.46</version>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -130,7 +135,6 @@
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>javax.mail-api</artifactId>
-			<version>1.6.1</version>
 		</dependency>
 		<!-- <dependency>
 			<groupId>com.sun.mail</groupId>
@@ -175,6 +179,12 @@
 			<artifactId>twitter-server_2.12</artifactId>
 			<version>18.7.0</version>
 		</dependency>
+
+		<!-- <dependency>
+			<groupId>com.sevenpay</groupId>
+			<artifactId>sevenpay-dubbo-enhance</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency> -->
 	</dependencies>
 
 	<build>

@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
@@ -25,6 +25,7 @@
 		<module>bean</module>
 		<module>web</module>
 		<module>service</module>
+		<module>service-dubbo-starter</module>		
 	</modules>
 
 	<properties>
@@ -46,23 +47,23 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
+			<!-- <dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
 				<version>1.2.14</version>
-			</dependency>
+			</dependency> -->
 			<!-- 将现有的  logging的调用转换成lsf4j的调用。 -->
-			<dependency>
+			<!-- <dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>log4j-over-slf4j</artifactId>
 				<version>1.7.25</version>
-			</dependency>
+			</dependency> -->
 			<!-- 将现有的jakarta commons logging的调用转换成lsf4j的调用。 -->
-			<dependency>
+			<!-- <dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>jcl-over-slf4j</artifactId>
 				<version>1.7.25</version>
-			</dependency>
+			</dependency> -->
 			<!-- Hack：确保commons-logging的jar包不被引入，否则将和jcl-over-slf4j冲突 -->
 			<dependency>
 				<groupId>commons-logging</groupId>
@@ -71,27 +72,36 @@
 				<!-- <scope>provided</scope> -->
 			</dependency>
 			<!-- slf4j的实现：logback，用来取代log4j。更快、更强！ -->
-			<dependency>
+			<!-- <dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
 				<version>${version.logback}</version>
-			</dependency>
+			</dependency> -->
 			<!-- /log -->
 			<!-- test -->
-			<dependency>
+			<!-- <dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${version.junit}</version>
 				<scope>test</scope>
-			</dependency>
-			<dependency>
+			</dependency> -->
+			<!-- <dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-test</artifactId>
 				<version>${version.spring}</version>
 				<scope>test</scope>
-			</dependency>
+			</dependency> -->
 			<!-- /test -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.0.4.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
 		</dependencies>
+
 	</dependencyManagement>
 
 	<build>
@@ -127,8 +137,8 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
+						<source>1.8</source>
+						<target>1.8</target>
 						<debug>true</debug>
 						<encoding>UTF-8</encoding>
 					</configuration>
