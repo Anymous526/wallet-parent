@@ -24,7 +24,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<version.webx>3.2.4</version.webx>
 		<version.dubbo>2.5.9</version.dubbo>
-		<version.zookeeper>3.4.9</version.zookeeper>
+		<version.zookeeper>3.4.14</version.zookeeper>
 		<version.zkclient>0.1</version.zkclient>
 	</properties>
 
